@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Vérification du code...</title>
+  <title>Vérification du code</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -21,10 +21,10 @@
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const code = params.get('code');
-
-    // Changez ici selon votre code secret
+    const code = params.get('code')?.trim(); // sécurité contre les espaces
     const codeCorrect = '151049';
+
+    // alert('Code reçu : ' + code); // utile pour test
 
     if (code === codeCorrect) {
       window.location.href = 'https://diegofransan.github.io/redirect-valide.html';
